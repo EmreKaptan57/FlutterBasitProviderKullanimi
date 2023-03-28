@@ -3,12 +3,20 @@ import 'package:provider/provider.dart';
 import 'package:providerdeneme/market.dart';
 
 class Counter with ChangeNotifier {
-  int _count = 0;
+  int para = 20;
+  int get count => para;
 
-  int get count => _count;
+  void parayiArttir() {
+    para++;
+    notifyListeners();
+  }
 
-  void increment() {
-    _count++;
+  void parayiAzalt() {
+    if (para <= 0) {
+      para == 0;
+    } else {
+      para--;
+    }
     notifyListeners();
   }
 }
@@ -45,7 +53,7 @@ class Anasayfa extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Provider.of<Counter>(context, listen: false).increment();
+          Provider.of<Counter>(context, listen: false).parayiArttir();
         },
         child: Icon(Icons.add),
       ),

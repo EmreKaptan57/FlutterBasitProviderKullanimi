@@ -47,10 +47,9 @@ class _MarketState extends State<Market> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange[800],
         onPressed: () {
-          Provider.of<Counter>(context, listen: false).increment();
+          Provider.of<Counter>(context, listen: false).parayiAzalt();
         },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.remove),
       ),
     );
   }
